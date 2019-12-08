@@ -1,0 +1,53 @@
+body
+{
+	margin:0;
+	padding:0;
+	background:#262626;
+}
+.pulse{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	width: 80px;
+	height: 80px;
+	background: #58EA00;
+	color: #FFF;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 80px;
+	font-size: 48px;
+}
+.pulse:before,.pulse:after{
+	content:'';
+	position: absolute;
+	border:50%;
+	border: 1px solid #58EA00;
+	left:-20%;
+	right:-20%;
+	top:-20%;
+	bottom:-20%;
+	border-radius: 50%;
+	animation: animate 1.5s infinite linear;
+	opacity:0;
+}
+.pulse:after{
+	animation-delay: 0.5s;
+}
+@keyframes animate 
+{
+	0%
+	{
+		transform: scale(0.5);
+		opacity:0;
+	}
+	50%
+	{
+		opacity:1;
+	}
+	100%
+	{
+		transform: scale(1.2);
+		opacity:0;
+	}
+}
